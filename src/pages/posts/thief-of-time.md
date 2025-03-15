@@ -1,5 +1,5 @@
 ---
-title: 'thief of time'
+title: 'welcome'
 pubDate: 2025-03-10
 description: 'this is the first post of my new astro blog.'
 author: 'iggy spolsky'
@@ -8,7 +8,7 @@ image:
   alt: 'the astro logo on a dark background with a pink glow.'
 tags: ["astro", "blogging", "running be"]
 ---
-# thief of time
+# welcome unpatient visitor
 
 published on: 2025-03-10
 
@@ -16,4 +16,3 @@ published on: 2025-03-10
 
 -terry pratchett, thief of time
 
-welcome visitor

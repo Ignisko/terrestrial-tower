@@ -9,7 +9,7 @@ pubDate: 2025-03-10
 tags: ["astro", "blogging", "contemplation"]
 ---
 
-# when tea met code
+# quo vadis, discipule?
 
 published on: 2025-03-10
 

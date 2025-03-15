@@ -1,23 +1,112 @@
-<body>
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
+---
+const pageTitle = "about me";
+const identity = {
+  firstName: "iggy",
+  country: "Poland", // Corrected country name
+  occupation: "learner",
+  hobbies: ["diving", "psychology", "martial arts"],
+};
+const skills = ["sales", "coding", "recruitment", "Astro"];
+const happy = true;
+const finished = false;
+const goal = 3;
 
-  <h1>About Me</h1>
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
+---
 
-  <p>I'm passionate about learning and exploring new technologies. Recently, I've been diving into web development, starting with basic courses on W3Schools and MIT's computer science lectures. I'm currently working through Astro's introductory tutorial, and this is the second page on my website (and the first one I built myself!).</p>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+    <style define:vars={{ skillColor, fontWeight, textCase }}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/blog/">Blog</a>
 
-  <h2>My Astro Journey</h2>
+    <h1>{pageTitle}</h1>
 
-  <p>I'm excited about Astro because it offers a unique approach to building websites. I can use my favorite UI components and combine them with the power of a static site generator. This means I can create fast, SEO-friendly websites with a modern development experience.</p>
+    <p>
+      i'm passionate about learning and exploring new technologies. recently, i've
+      been diving into web development, starting with basic courses on w3schools
+      and MIT's computer science lectures. i'm currently working through astro's
+      introductory tutorial, and this is the second page on my website i built myself!).
+    </p>
 
-  <p>I'm still in the early stages of my Astro journey, but I've already learned a lot. I've explored Astro's component syntax, its file-based routing system, and its ability to integrate with different data sources. I've also learned how to push my code to a repository and track my progress.</p>
+    <h2>my astro journey</h2>
 
-  <h2>Challenges and Successes</h2>
+    <p>
+      i like astro. it works.
+    </p>
 
-  <p>Like any new technology, Astro has presented some challenges. I've had to overcome some hurdles with setting up my development environment and understanding certain concepts. For example, my old laptop couldn't handle running Astro projects, and I experienced a lot of crashes. However, with the help of the Astro documentation, community, and resources like YouTube and ChatGPT, I've been able to overcome these challenges and achieve some early successes. I even learned how to run my website locally using PowerShell. I'm also grateful for the help I received from Luis on the Astro Discord server.</p>
+    <p>
+      learning a lot.
+    </p>
 
-  <h2>Looking Ahead</h2>
+    <h2>challenges and successes</h2>
 
-  <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going! I plan to share tutorials, tips, and insights that I gain along the way. I also hope to connect with other Astro developers and learn from their experiences.</p>
-</body>
+    <p>
+      like any new technology, astro has presented some challenges. i've had to
+      overcome some hurdles with setting up my development environment and
+      understanding certain concepts. for example, my old laptop couldn't handle
+      running astro projects, and i experienced a lot of crashes. however, with
+      the help of the astro documentation, community, and resources like youtube
+      and chatgpt, i've been able to overcome these challenges and achieve some
+      early successes. i even learned how to run my website locally using
+      powershell. i'm also grateful for the help i received from luis on the
+      astro discord server.
+    </p>
+
+    <h2>looking ahead</h2>
+
+    <p>
+      this site will update as i complete more of the tutorial, so keep checking
+      back and see how my journey is going! i plan to share tutorials, tips, and
+      insights that i gain along the way. i also hope to connect with other astro
+      developers and learn from their experiences.
+    </p>
+
+    <p>here are a few facts about me:</p>
+    <ul>
+      <li>my name is {identity.firstName}.</li>
+      <li>
+        i live in {identity.country} and i work as a {identity.occupation}.
+      </li>
+      {identity.hobbies.length >= 2 && (
+        <li>
+          two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
+        </li>
+      )}
+    </ul>
+    <p>my skills are:</p>
+    <ul>
+      {skills.map((skill) => (
+        <li class="skill">{skill}</li>
+      ))}
+    </ul>
+
+    {happy && <p>i am happy to be learning Astro!</p>}
+
+    {finished && <p>i finished this tutorial!</p>}
+
+    {goal === 3 ? (
+      <p>my goal is to finish in 3 days.</p>
+    ) : (
+      <p>my goal is not 3 days.</p>
+    )}
+  </body>
+</html>
